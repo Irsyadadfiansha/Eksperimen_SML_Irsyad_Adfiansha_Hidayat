@@ -15,12 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+
     
     - name: Set up Python 3.12.7
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.12.7'
+        python-version: '3.12'
     
     - name: Install dependencies
       run: |
@@ -41,7 +42,7 @@ jobs:
         git push
     
     - name: Upload preprocessed data as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: preprocessed-data
         path: preprocessing/heart_disease_preprocessed/
