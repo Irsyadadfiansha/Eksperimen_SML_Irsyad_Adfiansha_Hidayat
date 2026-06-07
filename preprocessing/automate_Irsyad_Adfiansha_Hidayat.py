@@ -21,10 +21,14 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def load_dataset(file_path=r"C:\Irsyad\dicoding\pijak\membangun sistem machine learning\SMSML_Irsyad_Adfiansha_Hidayat\Eksperimen_SML_Irsyad_Adfiansha_Hidayat\heart_disease_raw\heart_raw.csv") -> pd.DataFrame:
+def load_dataset(raw_dir: str) -> pd.DataFrame:
     logger.info("Loading local dataset...")
+
+    file_path = "../heart_disease_raw/heart_raw.csv"
+
     df = pd.read_csv(file_path)
     logger.info(f"Dataset loaded: {df.shape}")
+
     return df
 
 
